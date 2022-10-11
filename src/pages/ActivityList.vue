@@ -240,7 +240,7 @@ onUnmounted(() => {
           class="flex-1 text-base lg:text-4xl font-bold text-custom-black focus:outline-none"
           contenteditable="true"
           data-cy="todo-title"
-          @blur="cancelEditTitle"
+          @blur="saveEditTitle"
           @keydown.enter="saveEditTitle"
         >
           {{ activity.title }}
