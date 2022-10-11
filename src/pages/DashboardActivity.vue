@@ -61,7 +61,10 @@ onUnmounted(() => {
 <template>
   <div class="flex-1 flex flex-col items-stretch gap-y-9 lg:gap-y-12">
     <div class="flex justify-between items-center">
-      <h3 class="text-base lg:text-4xl font-bold text-custom-black">
+      <h3
+        class="text-base lg:text-4xl font-bold text-custom-black"
+        data-cy="activity-title"
+      >
         Activity
       </h3>
       <base-button
@@ -93,31 +96,33 @@ onUnmounted(() => {
       v-if="dataState === 'ready' && activities?.length > 0"
       class="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 pb-8"
     >
-      <div
-        v-for="(activity, index) in activities"
-        class="flex flex-col justify-between rounded-xl bg-white p-4 lg:p-7 shadow-custom flex-1 h-screen max-h-card lg:max-h-card-lg"
-        :data-cy="`activity-item-${index}`"
-        :key="index"
-      >
+      <div v-for="(activity, index) in activities" :key="index">
         <router-link
-          class="text-sm lg:text-lg text-custom-black font-bold line-clamp-3"
-          data-cy="activity-item-title"
+          class="flex flex-col justify-between rounded-xl bg-white p-4 lg:p-7 shadow-custom flex-1 h-screen max-h-card lg:max-h-card-lg"
+          data-cy="activity-item"
           :to="{ name: 'ActivityList', params: { id: activity.id } }"
         >
-          {{ activity.title }}
-        </router-link>
-        <div class="flex items-center justify-between">
-          <span
-            class="text-xxs leading-normal lg:text-sm text-custom-gray-200 font-medium"
-            data-cy="activity-item-date"
-            >{{ formatDate(new Date(activity.created_at)) }}</span
+          <div
+            class="text-sm lg:text-lg text-custom-black font-bold line-clamp-3"
+            data-cy="activity-item-title"
           >
-          <base-button
-            icon-only
-            data-cy="activity-item-delete-button"
-            icon="/assets/icons/activity-item-delete-button.svg"
-            @click="openDeleteDialog(activity)"
-          ></base-button>
+            {{ activity.title }}
+          </div>
+        </router-link>
+        <div class="h-0 relative -top-20 p-4 lg:p-7">
+          <div class="flex items-center justify-between">
+            <span
+              class="text-xxs leading-normal lg:text-sm text-custom-gray-200 font-medium"
+              data-cy="activity-item-date"
+              >{{ formatDate(new Date(activity.created_at)) }}</span
+            >
+            <base-button
+              icon-only
+              data-cy="activity-item-delete-button"
+              icon="/assets/icons/activity-item-delete-button.svg"
+              @click="openDeleteDialog(activity)"
+            ></base-button>
+          </div>
         </div>
       </div>
     </div>

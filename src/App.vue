@@ -1,11 +1,11 @@
 <script setup>
-import { useRoute, useRouter } from "vue-router";
-import { computed, onMounted, onUnmounted, ref } from "vue";
-import { useAppStore } from "./stores/appStore.js";
-import AppOverlay from "./components/AppOverlay.vue";
-import DeleteModalBox from "./components/DeleteModalBox.vue";
-import FormModalBox from "./components/FormModalBox.vue";
-import SnackbarAlert from "./components/SnackbarAlert.vue";
+import { useRoute, useRouter } from 'vue-router';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useAppStore } from './stores/appStore.js';
+import AppOverlay from './components/AppOverlay.vue';
+import DeleteModalBox from './components/DeleteModalBox.vue';
+import FormModalBox from './components/FormModalBox.vue';
+import SnackbarAlert from './components/SnackbarAlert.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -28,13 +28,13 @@ function backToPreviousPage() {
 }
 
 onMounted(() => {
-  window.addEventListener("load", getDeviceWidth());
-  window.addEventListener("resize", getDeviceWidth());
+  window.addEventListener('load', getDeviceWidth());
+  window.addEventListener('resize', getDeviceWidth());
 });
 
 onUnmounted(() => {
-  window.removeEventListener("load", getDeviceWidth());
-  window.removeEventListener("resize", getDeviceWidth());
+  window.removeEventListener('load', getDeviceWidth());
+  window.removeEventListener('resize', getDeviceWidth());
 });
 </script>
 
@@ -54,8 +54,11 @@ onUnmounted(() => {
             src="./assets/icons/todo-back-button_white.svg"
             class="w-5"
           />
-          <h1 class="uppercase text-base lg:text-2xl font-bold text-white">
-            {{ width < 1024 ? route.meta.title : "To Do List App" }}
+          <h1
+            class="uppercase text-base lg:text-2xl font-bold text-white"
+            data-cy="header-title"
+          >
+            {{ width < 1024 ? route.meta.title : 'To Do List App' }}
           </h1>
         </button>
       </div>
@@ -73,7 +76,7 @@ onUnmounted(() => {
   <Teleport to="body">
     <Transition name="modal">
       <delete-modal-box
-        v-if="modal.visibility && modal.type.includes('delete')"
+        v-show="modal.visibility && modal.type.includes('delete')"
         :type="modal.type"
         :name="modal.itemName"
         :activity-id="modal.activityId"
