@@ -311,6 +311,7 @@ onUnmounted(() => {
     <div
       v-if="activity.todo_items?.length === 0 && dataState === 'ready'"
       class="flex-1 shrink-0 basis-full flex flex-col justify-center gap-y-9 lg:relative"
+      data-cy="todo-empty-state"
     >
       <img
         class="w-full lg:max-w-3xl lg:mx-auto"
