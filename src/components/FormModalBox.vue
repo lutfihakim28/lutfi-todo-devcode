@@ -167,7 +167,7 @@ onBeforeUnmount(() => {
             {{ type === 'add' ? 'Tambah' : 'Ubah' }} List Item
           </h4>
           <base-button
-            icon="../../src/assets/icons/modal-add-close-button.svg"
+            icon="/assets/icons/modal-add-close-button.svg"
             icon-size="w-4 lg:w-6"
             data-cy="modal-add-close-button"
             icon-only
@@ -221,7 +221,7 @@ onBeforeUnmount(() => {
                     :class="priorityColor[item.priority]"
                   ></span>
                   <img
-                    src="../assets/icons/tabler_chevron-down.svg"
+                    src="/assets/icons/tabler_chevron-down.svg"
                     class="w-3 lg:w-6 transition-transform"
                     :class="{ 'rotate-180': isPriorityOptionShown }"
                   />

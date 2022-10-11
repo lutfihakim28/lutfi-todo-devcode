@@ -16,9 +16,9 @@ activityStore.getActivities().then(() => (appStore.dataState = 'ready'));
 const width = ref();
 const imageSrc = computed(() => {
   if (width.value < 1024) {
-    return '../../src/assets/ilustrations/activity-empty-state.svg';
+    return '/assets/ilustrations/activity-empty-state.svg';
   }
-  return '../../src/assets/ilustrations/activity-empty-state-desktop.svg';
+  return '/assets/ilustrations/activity-empty-state-desktop.svg';
 });
 const activities = computed(() => {
   return activityStore.activities;
@@ -67,7 +67,7 @@ onUnmounted(() => {
       <base-button
         data-cy="activity-add-button"
         label="Tambah"
-        icon="../../src/assets/icons/tabler_plus.svg"
+        icon="/assets/icons/tabler_plus.svg"
         :loading="dataState === 'loading'"
         @click="addActivity"
       ></base-button>
@@ -114,8 +114,8 @@ onUnmounted(() => {
           >
           <base-button
             icon-only
-            icon="../../src/assets/icons/activity-item-delete-button.svg"
             data-cy="activity-item-delete-button"
+            icon="/assets/icons/activity-item-delete-button.svg"
             @click="openDeleteDialog(activity)"
           ></base-button>
         </div>

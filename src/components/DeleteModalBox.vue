@@ -58,7 +58,7 @@ function deleteList(type) {
   >
     <div class="flex flex-col items-stretch px-9 py-9 lg:px-14 lg:py-11">
       <img
-        src="../assets/icons/modal-delete-icon.svg"
+        src="/assets/icons/modal-delete-icon.svg"
         class="w-16 lg:w-20 self-center"
       />
       <p

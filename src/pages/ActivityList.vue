@@ -16,31 +16,31 @@ activityStore.getActivities();
 
 const sortOptions = [
   {
-    icon: '../../src/assets/icons/sort-selection-icon-4.svg',
+    icon: '/assets/icons/sort-selection-icon-4.svg',
     label: 'Terbaru',
     value: 'newest',
     dataCy: 'sort-latest',
   },
   {
-    icon: '../../src/assets/icons/sort-selection-icon-2.svg',
+    icon: '/assets/icons/sort-selection-icon-2.svg',
     label: 'Terlama',
     value: 'oldest',
     dataCy: 'sort-oldest',
   },
   {
-    icon: '../../src/assets/icons/sort-selection-icon.svg',
+    icon: '/assets/icons/sort-selection-icon.svg',
     label: 'A-Z',
     value: 'ascending',
     dataCy: 'sort-az',
   },
   {
-    icon: '../../src/assets/icons/sort-selection-icon-1.svg',
+    icon: '/assets/icons/sort-selection-icon-1.svg',
     label: 'Z-A',
     value: 'descending',
     dataCy: 'sort-za',
   },
   {
-    icon: '../../src/assets/icons/sort-selection-icon-3.svg',
+    icon: '/assets/icons/sort-selection-icon-3.svg',
     label: 'Belum Selesai',
     value: 'active',
     dataCy: 'sort-unfinished',
@@ -69,9 +69,9 @@ const sort = ref(
 const title = ref(/** @type {HTMLElement} */ (undefined));
 const imageSrc = computed(() => {
   if (width.value < 1024) {
-    return '../../src/assets/ilustrations/todo-empty-state_mobile.svg';
+    return '/assets/ilustrations/todo-empty-state_mobile.svg';
   }
-  return '../../src/assets/ilustrations/todo-empty-state.svg';
+  return '/assets/ilustrations/todo-empty-state.svg';
 });
 const activity = computed(() => {
   return activityStore.activity;
@@ -230,7 +230,7 @@ onUnmounted(() => {
       >
         <base-button
           v-if="width >= 1024"
-          icon="../../src/assets/icons/todo-back-button.svg"
+          icon="/assets/icons/todo-back-button.svg"
           icon-only
           data-cy="todo-back-button"
           @click="backToPreviousPage"
@@ -246,7 +246,7 @@ onUnmounted(() => {
           {{ activity.title }}
         </h3>
         <base-button
-          icon="../../src/assets/icons/todo-title-edit-button.svg"
+          icon="/assets/icons/todo-title-edit-button.svg"
           icon-size="w-5 lg:w-6"
           icon-only
           data-cy="todo-title-edit-button"
@@ -262,7 +262,7 @@ onUnmounted(() => {
           <div class="flex items-center">
             <base-button
               icon-size="w-9 lg:w-14"
-              icon="../../src/assets/icons/todo-sort-button.svg"
+              icon="/assets/icons/todo-sort-button.svg"
               data-cy="todo-sort-button"
               icon-only
             ></base-button>
@@ -291,7 +291,7 @@ onUnmounted(() => {
                   <img
                     v-if="sort === option.value"
                     class="w-3.5 lg:w-5 no-events"
-                    src="../assets/icons/sort-selection-selected.svg"
+                    src="/assets/icons/sort-selection-selected.svg"
                   />
                 </button>
               </li>
@@ -301,7 +301,7 @@ onUnmounted(() => {
         <base-button
           class="lg:self-center"
           label="Tambah"
-          icon="../../src/assets/icons/tabler_plus.svg"
+          icon="/assets/icons/tabler_plus.svg"
           data-cy="todo-add-button"
           :loading="dataState === 'loading'"
           @click="addItemList('add')"
@@ -356,7 +356,7 @@ onUnmounted(() => {
               {{ item.title }}
             </span>
             <base-button
-              icon="../../src/assets/icons/todo-title-edit-button.svg"
+              icon="/assets/icons/todo-title-edit-button.svg"
               icon-size="w-4 lg:w-5"
               data-cy="todo-item-edit-button"
               icon-only
@@ -366,7 +366,7 @@ onUnmounted(() => {
         </div>
         <base-button
           icon-only
-          icon="../../src/assets/icons/activity-item-delete-button.svg"
+          icon="/assets/icons/activity-item-delete-button.svg"
           data-cy="todo-item-delete-button"
           @click="openDeleteDialog(item)"
         ></base-button>
