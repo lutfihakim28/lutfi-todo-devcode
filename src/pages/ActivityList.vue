@@ -281,10 +281,21 @@ onUnmounted(() => {
                 <button
                   class="px-4 py-3 lg:px-5 lg:py-4 flex items-center w-full"
                   @click="sortItems(option.value)"
+                  data-cy="sort-selection"
                 >
-                  <div class="flex-1 flex items-center gap-x-3 lg:gap-x-4">
-                    <img class="w-3.5 lg:w-5 no-events" :src="option.icon" />
-                    <span class="text-sm lg:text-base text-custom-gray-300">
+                  <div
+                    class="flex-1 flex items-center gap-x-3 lg:gap-x-4"
+                    :data-cy="option.dataCy"
+                  >
+                    <img
+                      class="w-3.5 lg:w-5 no-events"
+                      :src="option.icon"
+                      data-cy="sort-selection-icon"
+                    />
+                    <span
+                      class="text-sm lg:text-base text-custom-gray-300"
+                      data-cy="sort-selection-title"
+                    >
                       {{ option.label }}
                     </span>
                   </div>

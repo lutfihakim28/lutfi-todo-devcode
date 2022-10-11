@@ -58,7 +58,8 @@ onUnmounted(() => {
             class="uppercase text-base lg:text-2xl font-bold text-white"
             data-cy="header-title"
           >
-            {{ width < 1024 ? route.meta.title : 'TO DO LIST APP' }}
+            TO DO LIST APP
+            <!-- {{ width < 1024 ? route.meta.title : 'TO DO LIST APP' }} -->
           </h1>
         </button>
       </div>

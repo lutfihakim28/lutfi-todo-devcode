@@ -10,7 +10,7 @@ const router = createRouter({
       name: 'DashboardActivity',
       component: DashboardActivity,
       meta: {
-        title: 'To Do List App',
+        title: 'TO DO LIST APP',
         hasBackButton: false,
       },
     },
@@ -27,7 +27,7 @@ const router = createRouter({
 });
 
 router.beforeEach((destination) => {
-  const appTitle = 'To Do List App';
+  const appTitle = 'TO DO LIST APP';
   window.document.title =
     destination.meta?.title && destination.meta?.title !== appTitle
       ? `${appTitle} - ${destination.meta.title}`
