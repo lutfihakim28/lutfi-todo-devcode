@@ -239,6 +239,7 @@ onBeforeUnmount(() => {
                     <button
                       class="px-4 py-2.5 lg:py-3 flex items-center w-full gap-x-3 lg:gap-x-5"
                       @click="selectPriority('very-high')"
+                      data-cy="modal-add-priority-item"
                     >
                       <span
                         class="inline-block w-2 h-2 lg:w-3.5 lg:h-3.5 rounded-full bg-custom-red"
@@ -253,6 +254,7 @@ onBeforeUnmount(() => {
                     <button
                       class="px-4 py-2.5 lg:py-3 flex items-center w-full gap-x-3 lg:gap-x-5"
                       @click="selectPriority('high')"
+                      data-cy="modal-add-priority-item"
                     >
                       <span
                         class="inline-block w-2 h-2 lg:w-3.5 lg:h-3.5 rounded-full bg-custom-yellow"
@@ -267,6 +269,7 @@ onBeforeUnmount(() => {
                     <button
                       class="px-4 py-2.5 lg:py-3 flex items-center w-full gap-x-3 lg:gap-x-5"
                       @click="selectPriority('normal')"
+                      data-cy="modal-add-priority-item"
                     >
                       <span
                         class="inline-block w-2 h-2 lg:w-3.5 lg:h-3.5 rounded-full bg-custom-green"
@@ -281,6 +284,7 @@ onBeforeUnmount(() => {
                     <button
                       class="px-4 py-2.5 lg:py-3 flex items-center w-full gap-x-3 lg:gap-x-5"
                       @click="selectPriority('low')"
+                      data-cy="modal-add-priority-item"
                     >
                       <span
                         class="inline-block w-2 h-2 lg:w-3.5 lg:h-3.5 rounded-full bg-custom-blue-100"
@@ -295,6 +299,7 @@ onBeforeUnmount(() => {
                     <button
                       class="px-4 py-2.5 lg:py-3 flex items-center w-full gap-x-3 lg:gap-x-5"
                       @click="selectPriority('very-low')"
+                      data-cy="modal-add-priority-item"
                     >
                       <span
                         class="inline-block w-2 h-2 lg:w-3.5 lg:h-3.5 rounded-full bg-custom-purple"
